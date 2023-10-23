@@ -41,8 +41,22 @@ export class UsersService {
     if(user){
       return user;
     }
-    return "Hola Mundo";
+    return null;
     
+  }
+
+  async removeAll(){
+    return await this.userRepository.clear();
+  }
+
+  async uploadPhoto(username:string,bytea:any){
+    const user = await this.userRepository.findOne({
+      where:{
+        username:username
+      }
+    });
+    user.image = bytea;
+    return await this.userRepository.save(user);
   }
 
 }

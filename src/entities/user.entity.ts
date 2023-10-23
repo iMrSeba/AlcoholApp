@@ -20,6 +20,12 @@ export class User {
   email: string;
 
   @Column()
+  birthdate: Date;
+
+  @Column({ type: 'bytea', nullable: true })
+  image: Buffer | null;
+  
+  @Column()
   approved: boolean;
 
   @Column()

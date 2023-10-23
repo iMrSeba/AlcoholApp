@@ -12,6 +12,10 @@ export class UsersController {
     return await this.usersService.findAll();
   }
 
+  @Delete()
+  async removeAll(){
+    return await this.usersService.removeAll();
+  }
   @Post()
   async create(@Body() createUserDto: CreateUserDto){
     return await this.usersService.create(createUserDto);
@@ -32,4 +36,12 @@ export class UsersController {
     const user = createUserDto;
     return await this.usersService.findEmail(user.email);
   }
+  @Post('UploadPhoto')
+  async uploadPhoto(@Body() createUserDto: CreateUserDto, @Body() bytea: any) {
+    const user = createUserDto;
+    return await this.usersService.uploadPhoto(user.username,bytea);
+  }
 }
+
+
+
