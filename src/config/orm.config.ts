@@ -20,6 +20,11 @@ const DataBaseConfig: DataSourceOptions = {
     logging: process.env.TYPEORM_LOGGING === 'true',
     entities: [User],
     migrations: [__dirname + '/../migrations/*{.ts,.js}'],
+    extra: {
+        ssl: {
+            rejectUnauthorized: false, // Puedes ajustar esto según la configuración de tu instancia RDS
+        },
+    },
 }
 
 const TestConfig: DataSourceOptions = {
