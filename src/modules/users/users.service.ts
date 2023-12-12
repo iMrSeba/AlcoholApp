@@ -68,6 +68,7 @@ export class UsersService {
     user.username = updateUserDto.username;
     user.email = updateUserDto.email;
     user.password = updateUserDto.password;
+    user.image = updateUserDto.image;
     return await this.userRepository.save(user);
   }
 }

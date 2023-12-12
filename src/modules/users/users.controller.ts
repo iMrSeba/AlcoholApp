@@ -42,6 +42,12 @@ export class UsersController {
     const user = UpdateUserDto;
     return await this.usersService.uploadPhoto(user.username,user.image);
   }
+
+  @Post('updateUser')
+  async updateUser(@Body() UpdateUserDto: UpdateUserDto) {
+    const user = UpdateUserDto;
+    return await this.usersService.updateUser(user);
+  }
 }
 
 
