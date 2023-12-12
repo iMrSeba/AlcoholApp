@@ -22,8 +22,8 @@ export class User {
   @Column()
   birthdate: Date;
 
-  @Column({ type: 'bytea', nullable: true })
-  image: Buffer | null;
+  @Column({ type: 'text', nullable: true })
+  image: string | null;
   
   @Column()
   approved: boolean;

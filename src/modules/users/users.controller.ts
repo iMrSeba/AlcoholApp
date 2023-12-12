@@ -37,7 +37,7 @@ export class UsersController {
     return await this.usersService.findEmail(user.email);
   }
   @Post('UploadPhoto')
-  async uploadPhoto(@Body() createUserDto: CreateUserDto, @Body() bytea: any) {
+  async uploadPhoto(@Body() createUserDto: CreateUserDto, @Param() bytea: any) {
     const user = createUserDto;
     return await this.usersService.uploadPhoto(user.username,bytea);
   }
