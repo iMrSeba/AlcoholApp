@@ -1,3 +1,4 @@
+import { User } from './../../entities/user.entity';
 import { Controller, Get, Post, Body, Patch, Param, Delete, Req } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -37,9 +38,9 @@ export class UsersController {
     return await this.usersService.findEmail(user.email);
   }
   @Post('UploadPhoto')
-  async uploadPhoto(@Body() createUserDto: CreateUserDto, @Param() bytea: any) {
-    const user = createUserDto;
-    return await this.usersService.uploadPhoto(user.username,bytea);
+  async uploadPhoto(@Body() UpdateUserDto: UpdateUserDto) {
+    const user = UpdateUserDto;
+    return await this.usersService.uploadPhoto(user.username,user.image);
   }
 }
 
