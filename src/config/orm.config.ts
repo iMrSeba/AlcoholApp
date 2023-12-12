@@ -11,8 +11,8 @@ ConfigModule.forRoot({
 
 const DataBaseConfig: DataSourceOptions = {
     type: process.env.TYPEORM_CONNECTION as any,
-    host: process.env.TYPERORM_HOST,
-    port: parseInt(process.env.TYPERORM_PORT as string),
+    host: process.env.TYPEORM_HOST,
+    port: parseInt(process.env.TYPEORM_PORT as string),
     username: process.env.TYPEORM_USERNAME,
     password: process.env.TYPEORM_PASSWORD,
     database: process.env.TYPEORM_DATABASE,
