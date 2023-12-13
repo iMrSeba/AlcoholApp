@@ -59,16 +59,16 @@ export class UsersService {
     return await this.userRepository.save(user);
   }
 
-  async updateUser(updateUserDto:UpdateUserDto){
+  async updateUser(username:string,email:string,password:string,bytea:any){
     const user = await this.userRepository.findOne({
       where:{
-        username:updateUserDto.username
+        username:username
       }
     });
-    user.username = updateUserDto.username;
-    user.email = updateUserDto.email;
-    user.password = updateUserDto.password;
-    user.image = updateUserDto.image;
+    user.username = username;
+    user.email = email;
+    user.password = password;
+    user.image = bytea;
     return await this.userRepository.save(user);
   }
 }
