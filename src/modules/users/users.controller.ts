@@ -46,7 +46,7 @@ export class UsersController {
   @Post('updateUser')
   async updateUser(@Body() UpdateUserDto: UpdateUserDto) {
     const user = UpdateUserDto;
-    return await this.usersService.updateUser(user.username,user.email,user.password,user.image);
+    return await this.usersService.updateUser(user.username,user.email,user.password,user.newUsername,user.image);
   }
 }
 
